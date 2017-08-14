@@ -1,0 +1,41 @@
+<html>
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <button v-on:click="increase"> Increase </button>
+    <button v-on:click="decrease"> decrease </button>
+
+    <p>Counter: {{counter}}</p>
+    <p>Result: {{this.counter > 5 ? 'Greater 5': 'Smaller 5'}}
+
+</div>
+
+<script>
+
+new Vue({
+    el:'#app',
+    data: {
+        counter: 0,
+
+    },
+    methods: {
+        increase: function() {
+            this.counter++;
+            this.result = this.counter > 5 ? 'Greater 5': 'Smaller 5'
+            
+        },
+        decrease: function() {
+            this.counter--;
+            this.result = this.counter > 5 ? 'Greater 5': 'Smaller 5'
+            
+        }
+        <!-- the if statement is repeat twice. it can get messy if there are more methods --> 
+        <!-- see next example on how vue.js handles -->
+    }
+
+});
+
+</script>
+
+</html>

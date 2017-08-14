@@ -1,0 +1,45 @@
+<html>
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+       <input type="text" v-model="name">
+        {{ message }}
+</div>
+
+<script>
+
+new Vue({
+    el:'#app',
+    data: {
+        name: '',
+        message: ''
+        
+    },
+    computed: {
+
+        output: function() {
+            console.log('computed');
+            return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+        }
+    },
+    watch: {
+        name: function(value) {
+            var vm = this;
+            vm.message = "ok something changed!";
+            setTimeout(function() {
+                vm.message = "";
+            },2000);
+        }
+    },
+    methods: {
+        resultx: function() {
+
+        }
+    }
+
+});
+
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <!-- instead of just calling fucntion/method:  -->
+    <button v-on:click="increase"> click me </button>
+    <!-- you can put js code in event:  -->
+    <button v-on:click="counterb++"> click me 2</button>
+
+     <button v-on:click="increase_c"> click me x 2</button>
+    <p>{{counter}}</p>
+
+    <p>{{counterb}}</p>
+<!-- you can also add expressionss:  -->
+
+ <p>{{counterc * 2 > 10 ? 'Greater than 10' : 'Smaller than 10'}}</p>
+    </div>
+
+<script>
+
+new Vue({
+    el:'#app',
+    data: {
+        counter: 0,
+        counterb: 0,
+        counterc: 0
+    },
+    methods: {
+        increase: function() {
+            this.counter++;
+            
+        },
+        increase_c: function() {
+            this.counterc++;
+            
+        }
+    },
+
+
+});
+
+</script>
+
+</html>
